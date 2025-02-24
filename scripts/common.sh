@@ -38,8 +38,8 @@ rm_package "dnsproxy"
 rm_package "minidlna"
 rm_package "miniupnpc"
 rm_package "miniupnpd"
-rm_package "*linkease"
-rm_package "quickstart"
+#rm_package "*linkease"
+#rm_package "quickstart"
 # 添加package
 git clone -q --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone -q --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
@@ -51,7 +51,7 @@ git clone -q --depth=1 https://github.com/sirpdboy/luci-app-autotimeset.git pack
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone -q --depth=1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
-
+git clone  https://github.com/linkease/luci-app-linkease package/linkease
 git_sparse_clone() {
     branch="$1" repourl="$2" repodir="$3"
     [[ -d "package/cache" ]] && rm -rf package/cache
