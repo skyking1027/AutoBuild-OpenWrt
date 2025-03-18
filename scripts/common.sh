@@ -51,7 +51,6 @@ git clone -q --depth=1 https://github.com/sirpdboy/luci-app-autotimeset.git pack
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone -q --depth=1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
-git clone  https://github.com/linkease/luci-app-linkease package/linkease
 git_sparse_clone() {
     branch="$1" repourl="$2" repodir="$3"
     [[ -d "package/cache" ]] && rm -rf package/cache
@@ -62,7 +61,7 @@ git_sparse_clone() {
     echo -e "\e[31mFailed to sparse clone $repodir from $repourl($branch).\e[0m"
 }
 git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
-git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-quickstart
+#git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-quickstart
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-control-timewol
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-onliner
 git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-ddnsto
@@ -71,7 +70,7 @@ git_sparse_clone master https://github.com/linkease/nas-packages.git network/ser
 git_sparse_clone master https://github.com/lisaac/luci-app-dockerman.git applications/luci-app-dockerman
 git_sparse_clone master https://github.com/vernesong/OpenClash.git luci-app-openclash
 git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
-git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/quickstart
+#git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/quickstart
 git_sparse_clone master https://github.com/immortalwrt/luci.git applications/luci-app-ddns-go
 git_sparse_clone master https://github.com/immortalwrt/luci.git applications/luci-app-minidlna
 git_sparse_clone master https://github.com/immortalwrt/luci.git applications/luci-app-smartdns
