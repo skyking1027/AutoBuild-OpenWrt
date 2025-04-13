@@ -66,8 +66,11 @@ git_sparse_clone() {
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-control-timewol
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-onliner
 git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-ddnsto
+git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
 git_sparse_clone main https://github.com/ophub/luci-app-amlogic.git luci-app-amlogic
 git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/ddnsto
+git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
+git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkmount
 git_sparse_clone master https://github.com/lisaac/luci-app-dockerman.git applications/luci-app-dockerman
 git_sparse_clone master https://github.com/vernesong/OpenClash.git luci-app-openclash
 
