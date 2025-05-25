@@ -21,7 +21,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "h28k"
+        default: "s905d"
         type: choice
         options:
           - h28k
@@ -29,14 +29,15 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.10.y"
+        default: "6.12.y"
         type: choice
         options:
           - 5.4.y
           - 5.10.y
           - 5.15.y
-          - 6.1.y
+          - 6.12.y
           - 6.6.y
+          
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
@@ -45,11 +46,11 @@ on:
       openwrt_ip:
         description: "Select default ip"
         required: false
-        default: "10.10.10.1"
+        default: "192.168.123.2"
         type: choice
         options:
-          - 10.10.10.1
-          - 10.10.11.1
+          - 192.168.123.2
+          - 192.168.2.2
 
 env:
   CONFIG_FILE: configs/${{ inputs.source_branch }}/${{ inputs.openwrt_target }}.config
@@ -130,7 +131,7 @@ jobs:
         REPO_URL="https://github.com/immortalwrt/immortalwrt"
         case "${{ inputs.source_branch }}" in
           "immortalwrt-21.02") REPO_BRANCH="openwrt-21.02" ;;
-          "immortalwrt-24.10") REPO_BRANCH="openwrt-24.10" ;;
+          "immortalwrt-24.10") REPO_BRANCH="master" ;;
         esac
         git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
         ln -sf /builder/openwrt ${GITHUB_WORKSPACE}/openwrt
