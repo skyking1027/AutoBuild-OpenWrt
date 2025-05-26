@@ -131,7 +131,7 @@ jobs:
         REPO_URL="https://github.com/immortalwrt/immortalwrt"
         case "${{ inputs.source_branch }}" in
           "immortalwrt-21.02") REPO_BRANCH="openwrt-21.02" ;;
-          "immortalwrt-24.10") REPO_BRANCH="24.10" ;;
+          "immortalwrt-24.10") REPO_BRANCH="openwrt-24.10" ;;
         esac
         git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
         ln -sf /builder/openwrt ${GITHUB_WORKSPACE}/openwrt
