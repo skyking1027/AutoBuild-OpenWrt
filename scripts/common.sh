@@ -84,8 +84,8 @@ rm_pkg "miniupnpd"
 git clone -q --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone -q --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone -q --depth=1 https://github.com/sbwml/luci-app-alist.git package/alist
-git clone -q --depth=1 https://github.com/sbwml/luci-app-mosdns.git package/mosdns
-git clone -q --depth=1 https://github.com/sbwml/v2ray-geodata.git package/v2ray-geodata
+#git clone -q --depth=1 https://github.com/sbwml/luci-app-mosdns.git package/mosdns
+#git clone -q --depth=1 https://github.com/sbwml/v2ray-geodata.git package/v2ray-geodata
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-taskplan.git package/luci-app-taskplan
@@ -110,7 +110,7 @@ sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnpc
 sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnpd
 sparse_clone master https://github.com/immortalwrt/packages.git net/smartdns
 sparse_clone master https://github.com/immortalwrt/packages.git net/sqm-scripts
-
+clone_all https://github.com/kiddin9/kwrt-packages
 # Requires golang latest version
 rm -rf feeds/packages/lang/golang
 git clone -q --depth=1 https://github.com/sbwml/packages_lang_golang.git feeds/packages/lang/golang
