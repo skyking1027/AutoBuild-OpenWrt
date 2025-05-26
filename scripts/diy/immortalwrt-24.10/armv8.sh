@@ -45,7 +45,7 @@ load_functions
 info "[$(basename "${0}")] init"
 
 # Modify opkg source
-echo "src/gz openwrt_kiddin9 https://dl.openwrt.ai/latest/packages/aarch64_cortex-a53/kiddin9" >> package/system/opkg/files/customfeeds.conf
+echo "src/gz openwrt_kiddin9 https://dl.openwrt.ai/latest/packages/aarch64_generic/kiddin9" >> package/system/opkg/files/customfeeds.con
 
 # Add turboacc for firewall4
 curl -fsSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh &>/dev/null
