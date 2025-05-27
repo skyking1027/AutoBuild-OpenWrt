@@ -110,7 +110,9 @@ sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnpc
 sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnpd
 sparse_clone master https://github.com/immortalwrt/packages.git net/smartdns
 sparse_clone master https://github.com/immortalwrt/packages.git net/sqm-scripts
-clone_all https://github.com/kiddin9/kwrt-packages
+sparse_clone master https://github.com/kiddin9/kwrt-packages.git luci-app-nikki
+sparse_clone master https://github.com/kiddin9/kwrt-packages.git luci-app-filebrowser
+sparse_clone master https://github.com/kiddin9/kwrt-packages.git luci-app-linkease
 # Requires golang latest version
 rm -rf feeds/packages/lang/golang
 git clone -q --depth=1 https://github.com/sbwml/packages_lang_golang.git feeds/packages/lang/golang
