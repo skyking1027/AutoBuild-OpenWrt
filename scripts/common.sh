@@ -52,6 +52,8 @@ git clone -q --depth=1 https://github.com/sirpdboy/luci-app-taskplan.git package
 git clone -q --depth=1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
 git clone -q --depth=1 https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
+git clone --depth=1 https://github.com/kiddin9/kwrt-packages package/luci-app-linkease
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 
 git_sparse_clone() {
     branch="$1" repourl="$2" repodir="$3"
