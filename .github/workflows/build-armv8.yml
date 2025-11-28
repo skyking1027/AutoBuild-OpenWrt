@@ -6,7 +6,7 @@ on:
       source_branch:
         description: "Select the source branch"
         required: false
-        default: "immortalwrt-21.02"
+        default: "immortalwrt-24.10"
         type: choice
         options:
           - immortalwrt-21.02
@@ -21,7 +21,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "h28k"
+        default: "s905d"
         type: choice
         options:
           - h28k
@@ -29,7 +29,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.10.y"
+        default: "6.12.y"
         type: choice
         options:
           - 5.4.y
@@ -37,6 +37,7 @@ on:
           - 5.15.y
           - 6.1.y
           - 6.6.y
+          - 6.12.y
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
@@ -45,11 +46,11 @@ on:
       openwrt_ip:
         description: "Select default ip"
         required: false
-        default: "10.10.10.1"
+        default: "192.168.123.2"
         type: choice
         options:
-          - 10.10.10.1
-          - 10.10.11.1
+          - 192.168.123.2
+          - 192.168.2.2
 
 env:
   CONFIG_FILE: configs/${{ inputs.source_branch }}/${{ inputs.openwrt_target }}.config
@@ -133,7 +134,7 @@ jobs:
                 REPO_BRANCH="openwrt-21.02"
                 ;;
             "immortalwrt-24.10")
-                REPO_BRANCH="openwrt-24.10"
+                REPO_BRANCH="v24.10.4"
                 ;;
         esac
         git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
@@ -242,7 +243,7 @@ jobs:
         KERNEL_REPO_URL: ophub/kernel
         KERNEL_VERSION_NAME: ${{ inputs.openwrt_kernel }}
         KERNEL_AUTO_LATEST: ${{ inputs.auto_kernel }}
-        WHOAMI: v8040
+        WHOAMI: skyking1027
 
     # - name: Package OpenWrt Firmware [${{ inputs.openwrt_board }}] [${{ inputs.openwrt_kernel }}]
       # if: ${{ steps.clean.outputs.status }} == 'success'
