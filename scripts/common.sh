@@ -72,9 +72,9 @@ git_sparse_clone master https://github.com/linkease/nas-packages.git network/ser
 git_sparse_clone master https://github.com/kiddin9/kwrt-packages.git luci-app-dockerman
 git_sparse_clone master https://github.com/vernesong/OpenClash.git luci-app-openclash
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-linkease
-git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
-git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
-git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkmount
+#git_sparse_clone main https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
+#git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
+#git_sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkmount
 
 git_sparse_clone master https://github.com/immortalwrt/luci.git applications/luci-app-ddns-go
 git_sparse_clone master https://github.com/immortalwrt/luci.git applications/luci-app-minidlna
@@ -86,6 +86,8 @@ git_sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnp
 git_sparse_clone master https://github.com/immortalwrt/packages.git net/miniupnpd
 git_sparse_clone master https://github.com/immortalwrt/packages.git net/smartdns
 git_sparse_clone master https://github.com/immortalwrt/packages.git net/sqm-scripts
+
+sed -i '$a src-git kiddin9_openwrt_packages https://github.com/kiddin9/kwrt-packages.git' feeds.conf.default
 
 # requires golang latest version
 rm -rf feeds/packages/lang/golang
