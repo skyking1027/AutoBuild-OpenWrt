@@ -51,7 +51,6 @@ git clone -q --depth=1 https://github.com/sirpdboy/luci-app-partexp.git package/
 git clone -q --depth=1 https://github.com/sirpdboy/luci-app-taskplan.git package/luci-app-taskplan
 git clone -q --depth=1 https://github.com/sirpdboy/netspeedtest.git package/luci-app-netspeedtest
 git clone -q --depth=1 https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
-git clone --depth=1 https://github.com/kiddin9/kwrt-packages package/luci-app-linkease
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 
 git_sparse_clone() {
