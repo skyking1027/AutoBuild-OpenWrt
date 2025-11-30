@@ -39,6 +39,7 @@ rm_package "dnsproxy"
 rm_package "minidlna"
 rm_package "miniupnpc"
 rm_package "miniupnpd"
+rm_package "linkease" 
 
 # 添加package
 git clone -q --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
@@ -54,7 +55,7 @@ git clone -q --depth=1 https://github.com/tty228/luci-app-wechatpush.git package
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 
 git_sparse_clone() {
-    branch="$1" repourl="$2" repodir="$3"
+    分支="$1" repourl="$2" repodir="$3"
     [[ -d "package/cache" ]] && rm -rf package/cache
     git clone -q --branch=$branch --depth=1 --filter=blob:none --sparse $repourl package/cache &&
     git -C package/cache sparse-checkout set $repodir &&
