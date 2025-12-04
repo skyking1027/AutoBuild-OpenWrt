@@ -1,0 +1,71 @@
+name: 'Build OpenWrt for armv8'
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Select the source branch'
+        required: false
+        default: 'lede'
+        type: choice
+        options:
+         - immortalwrt
+         - lede
+      openwrt_board:
+        description: 'Select device board'
+        required: false
+        default: 'rootfs'
+        type: choice
+        options:
+         - rootfs
+      diy_config:
+        description: 'Load custom configuration'
+        required: false
+        default: true
+        type: boolean
+      package_method:
+        description: 'Select package method'
+        required: false
+        default: 'flippy'
+        type: choice
+        options:
+          - flippy
+          - ophub
+      package_board:
+        description: 'Select device board'
+        required: false
+        default: 'h28k_s905d'
+        type: choice
+        options:
+          - h28k_s905d
+      package_kernel:
+        description: 'Select kernel version'
+        required: false
+        default: '6.12.y'
+        type: choice
+        options:
+          - 5.4.y
+          - 5.10.y
+          - 5.15.y
+          - 6.1.y
+          - 6.6.y
+          - 6.12.y
+      package_auto_kernel:
+        description: 'Auto use the latest kernel'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  Caller:
+    if: github.event.repository.owner.id == github.event.sender.id
+    uses: ./.github/workflows/build.yml
+    with:
+      source_branch: ${{ inputs.source_branch }}
+      openwrt_target: armv8
+      openwrt_board: ${{ inputs.source_branch == 'immortalwrt' && 'rootfs' || inputs.openwrt_board }}
+      diy_config: ${{ inputs.diy_config }}
+      package_method: ${{ inputs.package_method }}
+      package_board: ${{ inputs.package_board }}
+      package_kernel: ${{ inputs.package_kernel }}
+      package_auto_kernel: ${{ inputs.package_auto_kernel }}
