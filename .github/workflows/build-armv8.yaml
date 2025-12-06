@@ -34,10 +34,10 @@ on:
       package_board:
         description: 'Select device board'
         required: false
-        default: 'h28k_s905d'
+        default: 's905d'
         type: choice
         options:
-          - h28k_s905d
+          - s905d
       package_kernel:
         description: 'Select kernel version'
         required: false
