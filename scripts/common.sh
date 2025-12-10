@@ -33,6 +33,8 @@ git clone -q --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package
 git clone -q --depth=1 https://github.com/sbwml/luci-app-mosdns.git package/mosdns
 git clone -q --depth=1 https://github.com/sbwml/v2ray-geodata.git package/v2ray-geodata
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
+git clone --depth=1 https://github.com/kiddin9/kwrt-packages package/luci-app-linkease
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
 
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-control-timewol
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-onliner
