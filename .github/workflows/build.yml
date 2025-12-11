@@ -43,7 +43,7 @@ env:
   SOURCE_BRANCH: ${{ inputs.source_branch }}
   OPENWRT_BOARD: ${{ inputs.package_mode && 'package' || inputs.openwrt_board }}
   OPENWRT_TARGET: ${{ inputs.openwrt_target }}
-  OPENWRT_IP: ${{ inputs.openwrt_target == 'armv8' && '10.10.10.1' || '10.10.11.1' }}
+  OPENWRT_IP: ${{ inputs.openwrt_target == 'armv8' && '192.168.123.2' || '192.168.2.2' }}
   RELEASE_TAG: ${{ inputs.package_mode && 'package' || inputs.openwrt_target }}
   RELEASE_LATEST: ${{ !inputs.package_mode && inputs.openwrt_target == 'armv8' && 'true' || 'false' }}
   RELEASE_PRERE: ${{ (inputs.package_mode || inputs.openwrt_target != 'armv8') && 'true' || 'false' }}
