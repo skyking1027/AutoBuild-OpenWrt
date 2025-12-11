@@ -36,8 +36,8 @@ on:
         required: false
         type: choice
         options:
-          - h28k_s905d
-        default: h28k_s905d
+          - s905d
+        default: s905d
       package_kernel:
         description: 'Select kernel version'
         required: false
