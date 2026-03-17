@@ -34,10 +34,13 @@ git clone -q --depth=1 https://github.com/sbwml/luci-app-mosdns.git package/mosd
 git clone -q --depth=1 https://github.com/sbwml/v2ray-geodata.git package/v2ray-geodata
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
 
-# 易有云
-git clone -q --depth=1 https://github.com/linkease/linkease-openwrt.git package/linkease
 # Nikki
-git clone -q --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/nikki
+git clone -q --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/luci-app-nikki
+
+# 易有云 LinkEase
+rm -rf feeds/packages/net/linkease feeds/luci/applications/luci-app-linkease
+sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
+sparse_clone master https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
 
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-control-timewol
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-onliner
