@@ -37,10 +37,13 @@ git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/
 # Nikki
 git clone -q --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/luci-app-nikki
 
-# 易有云 LinkEase
-rm -rf feeds/packages/net/linkease feeds/luci/applications/luci-app-linkease
-sparse_clone master https://github.com/linkease/nas-packages.git network/services/linkease
-sparse_clone master https://github.com/linkease/nas-packages-luci.git luci/luci-app-linkease
+# 删除之前的失败文件
+rm -rf package/linkease package/luci-app-linkease package/linkmount
+
+# 完整克隆易有云主仓库（包含依赖）
+git clone -q --depth=1 --branch master https://github.com/linkease/nas-packages.git package/nas-packages
+# 完整克隆 Luci 界面仓库
+git clone -q --depth=1 --branch master https://github.com/linkease/nas-packages-luci.git package/nas-packages-luci
 
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-control-timewol
 sparse_clone main https://github.com/kiddin9/kwrt-packages.git luci-app-onliner
