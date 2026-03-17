@@ -26,13 +26,14 @@ rm_pkg '*trojan*'
 rm_pkg '*v2ray*'
 rm_pkg '*xray*'
 rm_pkg 'dnsproxy'
-
+rm_pkg 'filebrowser'
 # Add packages
 git clone -q --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 git clone -q --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone -q --depth=1 https://github.com/sbwml/luci-app-mosdns.git package/mosdns
 git clone -q --depth=1 https://github.com/sbwml/v2ray-geodata.git package/v2ray-geodata
 git clone -q --depth=1 https://github.com/zzsj0928/luci-app-pushbot.git package/luci-app-pushbot
+git clone -q --depth=1 https://github.com/OldCoding/luci-app-filebrowser.git package/luci-app-filebrowser
 
 # Nikki
 git clone -q --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki.git package/luci-app-nikki
